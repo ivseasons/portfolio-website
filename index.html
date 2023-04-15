@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Seika Fukumoto | Portfolio</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/cube-filled.png">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+
+        <div class="navbar flex">
+            <div>
+                <a class="logo-name text-gray ff-serif fs-600" href="index.html">seika</a>
+                <img class="logo" src="./images/nav/cube-logo.png">
+            </div>
+            
+            <button class="mobile-navigation-btn" aria-controls="primary-navigation" id="open-btn" data-visible="false">
+               <span class="sr-only" id="aria" aria-expanded="false">Menu</span>
+            </button>
+            <nav class="primary-navigation" id="primary-navigation">
+                <ul>
+                    <li>
+                        <a class="ff-sans letter-spacing-2 uppercase ff-500 text-gray" href="#">portfolio</a>
+                    </li>
+                    <li>
+                        <a class="ff-sans letter-spacing-2 uppercase ff-500 text-gray" href="#">about me</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn ff-sans uppercase ff-500 text-gray" href="#">get in touch</a>
+                    </li>
+                </ul>
+                <div class="lang">
+                    <a class="lang-btn text-gray ff-400 ff-sans" aria-selected="true" href="#">EN</a> 
+                    <span> | </span>
+                    <a class="lang-btn text-gray ff-400 ff-sans" aria-selected="false" href="#">JP</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="hero wrapper">
+       
+        <div class="hero-title">
+            <span class="ff-serif text-gray fs-700 letter-spacing-1 block">UI/UX</span>
+            <span class="ff-serif text-primary fs-700 letter-spacing-1 uppercase block-mobile">Designer</span>
+            <span class="ff-serif text-gray fs-700 letter-spacing-1 block-mobile">and</span>
+            <span class="ff-serif text-gray fs-700 letter-spacing-1 block">Full-Stack</span>
+            <span class="ff-serif text-primary fs-700 letter-spacing-1 uppercase block">Developer</span>
+        </div>
+        <div class="hero-btns">
+            <a class="primary-btn filled-btn" href="#">see portfolio</a>
+            <a class="primary-btn white-btn" href="#">get in touch</a>
+        </div>
+        <div class="hero-images">
+            <img class="hero-name-img" src="./images/name-square.png">
+            <img class="hero-square-img" src="./images/hero-square.png">
+        </div>
+
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
