@@ -28,16 +28,14 @@ $font-family: (
     --fs-700: 2rem;
 
     @media (min-width: 575px) {
-        --fs-500: 1.25rem;
+        --fs-500: clamp(.9rem, 1vw + .5rem, 1.1rem);
         --fs-600: 2rem;
-        --fs-700: 3rem;
+        --fs-700: clamp(2rem, 4vw + 1rem, 4.25rem);
     }
 
-    @media (min-width: 760px) {
+    @media (min-width: 850px) {
         --fs-400: 1rem;
-        --fs-500: 1.5rem;
-        --fs-600: 3rem;
-        --fs-700: 4.5rem;
+        --fs-600: 2.5rem;
     }
    
 };
@@ -106,6 +104,7 @@ a {
 
 .wrapper {
     margin: 1em 2em;
+    max-width: 95%;
 }
 
 .flex {
@@ -130,17 +129,27 @@ a {
     @media (min-width: 575px) {
         display: inline-block;
     }
+
 }
 
 .primary-btn {
     margin-bottom: .75em;
     padding: .5em 1.5rem;
     font-weight: bold;
+    transition: .3s;
 
     &.filled-btn {
         background-color: color(light);
         border: 2px solid color(light);
         color: white;
+
+        @media (min-width: 575px) {
+            margin-right: 1em;
+        }
+
+        @media (min-width: 850px) {
+            margin-right: 1.5em;
+        }
     }
 
     &.white-btn {
@@ -155,6 +164,10 @@ a {
         background-color: color(primary);
         border: 2px solid color(primary);
         color: white;
+    }
+
+    @media (min-width: 850px) {
+        padding-inline: clamp(1.5rem, 1vw + 1rem, 3rem);
     }
 }
 
@@ -221,6 +234,14 @@ a {
         width: 1.25rem;
         aspect-ratio: 1;
     }
+
+    @media (min-width: 850px) {
+        margin: 3em 5.5em;
+
+        .logo {
+            width: 2rem;
+        }
+    }
 }
 
 .mobile-navigation-btn {
@@ -273,6 +294,7 @@ a {
 
             a {
                 padding-bottom: .5em;
+                transition: .3s;
         
                 &:hover,
                 &:focus {
@@ -287,7 +309,13 @@ a {
 
             li {
                 padding-block: 0;
-                padding-inline: clamp(.1em, 1vw + .25em, 1em);
+                padding-left: clamp(.5em, 2vw + .5em, 2em);
+            }
+        }
+
+        @media (min-width: 850px) {
+            li {
+                padding-left: clamp(2em, 3vw + 1em, 4em);
             }
         }
     }
@@ -313,6 +341,7 @@ a {
     color: color(primary);
     font-weight: bold;
     letter-spacing: 2.7px;
+    transition: .3s;
 
     &:hover,
     &:focus {
@@ -325,11 +354,13 @@ a {
         color: white;
         background-color: color(light);
         padding: .5em .75em;
+        font-weight: normal;
         letter-spacing: 0;
 
         &:hover,
         &:focus {
             color: white;
+            font-weight: normal;
             background-color: color(primary);
             border-bottom: 0px !important;
         }
@@ -347,6 +378,7 @@ a {
 
     a {
         font-weight: bold;
+        transition: .3s;
 
         &:hover,
         &:focus {
@@ -355,41 +387,18 @@ a {
     }
 
     @media (min-width: 575px) {
-        top: 0;
-        right: 0;
+        top: .5vw;
+        right: 1vw;
         bottom: unset;
 
-        span {
-            display: none;
-        }
-
-        a {
+        a.lang-btn {
             font-weight: normal;
-            padding: .3em;
         }
 
-        [aria-selected="true"] {
-            background-color: hsl(0 0% 16% / .5);
-            color: white;
+    }
 
-            &:hover,
-            &:focus {
-                background-color: color(gray);
-                color: white;
-            }
-        }
-
-        [aria-selected="false"] {
-            background-color: hsl(0 0% 16% / .25);
-            color: color(gray);
-
-            &:hover,
-            &:focus {
-                background-color: color(gray);
-                color: white;
-            }
-        }
-
+    @media (min-width: 850px) {
+        top: .75vw;
     }
  
 }
@@ -402,6 +411,13 @@ body {
     background-size: cover;
     background-position: right;
     background-position-x: 85%;
+
+    @media (min-width: 850px) {
+        background-image: url("../images/bg/bg-filled-square.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left;
+    }
 }
 
 /* Hero Section */
@@ -413,21 +429,39 @@ body {
         'buttons'
         'image';
     row-gap: 1em;
+    max-height: 90vh;
 
     @media (min-width: 575px) {
         grid-template-areas: 
+            '.'
             'title'
             'image'
-            'buttons';
+            'buttons'
+            '.';
         place-content: center;
         row-gap: 1.5em;
+        max-height: 100vh;
+    }
+
+    @media (min-width: 850px) {
+        min-height: 70vh;
+        grid-template-areas:
+            '. title image .'
+            '. buttons image .';
+        grid-template-columns: minmax(4rem, 1fr) minmax(0, 40em) minmax(0, 25em) minmax(4rem, 1fr);
+        row-gap: 2em;
+
+        &.wrapper {
+            margin-block: 0;
+            margin-inline: min(1.5em, 7vw);
+            max-width: unset;
+        }
     }
 }
 
 .hero-title {
     grid-area: title;
     position: relative;
-    
 
     &::after {
         content: '';
@@ -438,10 +472,26 @@ body {
         width: 150px;
         height: 7px;
         background-color: hsl(0 0% 16% / .15);
+
+        @media (min-width: 575px) {
+            left: 20%;
+            bottom: 3%;
+            width: 225px;
+        }
+
+        @media (min-width: 850px) {
+            left: -10%;
+            height: 10px;
+            width: 300px;
+        }
     }
 
     @media (min-width: 575px) {
         text-align: center;
+    }
+
+    @media (min-width: 850px) {
+        text-align: left;
     }
 }
 
@@ -456,15 +506,21 @@ body {
         justify-content: center;
         width: auto;
 
-        .primary-btn {
-            margin-inline: .5em;
-        }
+    }
+
+    @media (min-width: 850px) {
+        justify-content: left;
     }
 }
 
 .hero-images {
     grid-area: image;
     position: relative;
+
+    @media (min-width: 575px) {
+        display: grid;
+        place-items: center;
+    }
 
     .hero-name-img,
     .hero-square-img {
@@ -473,19 +529,22 @@ body {
         right: 0;
         top: -4em;
 
-
         @media (min-width: 575px) {
             width: 50%;
-            top: 0;
+            top: unset;
             right: unset;
         }
+
+        @media (min-width: 850px) {
+            width: 100%;
+        }
     }
+
     .hero-name-img {
         z-index: 0;
 
         @media (min-width: 575px) {
             position: relative;
-            margin-inline: auto;
         }
     }
 
@@ -494,6 +553,10 @@ body {
 
         @media (min-width: 575px) {
             right: 25%;
+        }
+
+        @media (min-width: 850px) {
+            right: 5%;
         }
     }
     

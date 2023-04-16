@@ -8,17 +8,15 @@
 }
 @media (min-width: 575px) {
   :root {
-    --fs-500: 1.25rem;
+    --fs-500: clamp(.9rem, 1vw + .5rem, 1.1rem);
     --fs-600: 2rem;
-    --fs-700: 3rem;
+    --fs-700: clamp(2rem, 4vw + 1rem, 4.25rem);
   }
 }
-@media (min-width: 760px) {
+@media (min-width: 850px) {
   :root {
     --fs-400: 1rem;
-    --fs-500: 1.5rem;
-    --fs-600: 3rem;
-    --fs-700: 4.5rem;
+    --fs-600: 2.5rem;
   }
 }
 
@@ -83,6 +81,7 @@ a {
 /* UTILITY CLASSES */
 .wrapper {
   margin: 1em 2em;
+  max-width: 95%;
 }
 
 .flex {
@@ -114,11 +113,22 @@ a {
   margin-bottom: 0.75em;
   padding: 0.5em 1.5rem;
   font-weight: bold;
+  transition: 0.3s;
 }
 .primary-btn.filled-btn {
   background-color: hsl(183, 55%, 40%);
   border: 2px solid hsl(183, 55%, 40%);
   color: white;
+}
+@media (min-width: 575px) {
+  .primary-btn.filled-btn {
+    margin-right: 1em;
+  }
+}
+@media (min-width: 850px) {
+  .primary-btn.filled-btn {
+    margin-right: 1.5em;
+  }
 }
 .primary-btn.white-btn {
   background-color: #F9F9F9;
@@ -130,6 +140,11 @@ a {
   background-color: hsl(193, 100%, 31%);
   border: 2px solid hsl(193, 100%, 31%);
   color: white;
+}
+@media (min-width: 850px) {
+  .primary-btn {
+    padding-inline: clamp(1.5rem, 1vw + 1rem, 3rem);
+  }
 }
 
 .flow > *:where(:not(:first-child)) {
@@ -222,6 +237,14 @@ a {
   width: 1.25rem;
   aspect-ratio: 1;
 }
+@media (min-width: 850px) {
+  .navbar {
+    margin: 3em 5.5em;
+  }
+  .navbar .logo {
+    width: 2rem;
+  }
+}
 
 .mobile-navigation-btn {
   display: block;
@@ -272,6 +295,7 @@ a {
 }
 .primary-navigation ul li a {
   padding-bottom: 0.5em;
+  transition: 0.3s;
 }
 .primary-navigation ul li a:hover, .primary-navigation ul li a:focus {
   border-bottom: 2px solid hsl(193, 100%, 31%);
@@ -283,7 +307,12 @@ a {
   }
   .primary-navigation ul li {
     padding-block: 0;
-    padding-inline: clamp(0.1em, 1vw + 0.25em, 1em);
+    padding-left: clamp(0.5em, 2vw + 0.5em, 2em);
+  }
+}
+@media (min-width: 850px) {
+  .primary-navigation ul li {
+    padding-left: clamp(2em, 3vw + 1em, 4em);
   }
 }
 @media (min-width: 575px) {
@@ -308,6 +337,7 @@ a {
   color: hsl(193, 100%, 31%);
   font-weight: bold;
   letter-spacing: 2.7px;
+  transition: 0.3s;
 }
 .nav-btn:hover, .nav-btn:focus {
   color: hsl(183, 55%, 40%);
@@ -319,10 +349,12 @@ a {
     color: white;
     background-color: hsl(183, 55%, 40%);
     padding: 0.5em 0.75em;
+    font-weight: normal;
     letter-spacing: 0;
   }
   .nav-btn:hover, .nav-btn:focus {
     color: white;
+    font-weight: normal;
     background-color: hsl(193, 100%, 31%);
     border-bottom: 0px !important;
   }
@@ -338,38 +370,24 @@ a {
 }
 .lang a {
   font-weight: bold;
+  transition: 0.3s;
 }
 .lang a:hover, .lang a:focus {
   color: hsla(0, 0%, 16%, 0.5);
 }
 @media (min-width: 575px) {
   .lang {
-    top: 0;
-    right: 0;
+    top: 0.5vw;
+    right: 1vw;
     bottom: unset;
   }
-  .lang span {
-    display: none;
-  }
-  .lang a {
+  .lang a.lang-btn {
     font-weight: normal;
-    padding: 0.3em;
   }
-  .lang [aria-selected=true] {
-    background-color: hsla(0, 0%, 16%, 0.5);
-    color: white;
-  }
-  .lang [aria-selected=true]:hover, .lang [aria-selected=true]:focus {
-    background-color: hsl(0, 0%, 16%);
-    color: white;
-  }
-  .lang [aria-selected=false] {
-    background-color: hsla(0, 0%, 16%, 0.25);
-    color: hsl(0, 0%, 16%);
-  }
-  .lang [aria-selected=false]:hover, .lang [aria-selected=false]:focus {
-    background-color: hsl(0, 0%, 16%);
-    color: white;
+}
+@media (min-width: 850px) {
+  .lang {
+    top: 0.75vw;
   }
 }
 
@@ -381,18 +399,41 @@ body {
   background-position: right;
   background-position-x: 85%;
 }
+@media (min-width: 850px) {
+  body {
+    background-image: url("../images/bg/bg-filled-square.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+  }
+}
 
 /* Hero Section */
 .hero {
   display: grid;
   grid-template-areas: "title" "buttons" "image";
   row-gap: 1em;
+  max-height: 90vh;
 }
 @media (min-width: 575px) {
   .hero {
-    grid-template-areas: "title" "image" "buttons";
+    grid-template-areas: "." "title" "image" "buttons" ".";
     place-content: center;
     row-gap: 1.5em;
+    max-height: 100vh;
+  }
+}
+@media (min-width: 850px) {
+  .hero {
+    min-height: 70vh;
+    grid-template-areas: ". title image ." ". buttons image .";
+    grid-template-columns: minmax(4rem, 1fr) minmax(0, 40em) minmax(0, 25em) minmax(4rem, 1fr);
+    row-gap: 2em;
+  }
+  .hero.wrapper {
+    margin-block: 0;
+    margin-inline: min(1.5em, 7vw);
+    max-width: unset;
   }
 }
 
@@ -411,8 +452,27 @@ body {
   background-color: hsla(0, 0%, 16%, 0.15);
 }
 @media (min-width: 575px) {
+  .hero-title::after {
+    left: 20%;
+    bottom: 3%;
+    width: 225px;
+  }
+}
+@media (min-width: 850px) {
+  .hero-title::after {
+    left: -10%;
+    height: 10px;
+    width: 300px;
+  }
+}
+@media (min-width: 575px) {
   .hero-title {
     text-align: center;
+  }
+}
+@media (min-width: 850px) {
+  .hero-title {
+    text-align: left;
   }
 }
 
@@ -429,14 +489,22 @@ body {
     justify-content: center;
     width: auto;
   }
-  .hero-btns .primary-btn {
-    margin-inline: 0.5em;
+}
+@media (min-width: 850px) {
+  .hero-btns {
+    justify-content: left;
   }
 }
 
 .hero-images {
   grid-area: image;
   position: relative;
+}
+@media (min-width: 575px) {
+  .hero-images {
+    display: grid;
+    place-items: center;
+  }
 }
 .hero-images .hero-name-img,
 .hero-images .hero-square-img {
@@ -449,8 +517,14 @@ body {
   .hero-images .hero-name-img,
   .hero-images .hero-square-img {
     width: 50%;
-    top: 0;
+    top: unset;
     right: unset;
+  }
+}
+@media (min-width: 850px) {
+  .hero-images .hero-name-img,
+  .hero-images .hero-square-img {
+    width: 100%;
   }
 }
 .hero-images .hero-name-img {
@@ -459,7 +533,6 @@ body {
 @media (min-width: 575px) {
   .hero-images .hero-name-img {
     position: relative;
-    margin-inline: auto;
   }
 }
 .hero-images .hero-square-img {
@@ -468,5 +541,10 @@ body {
 @media (min-width: 575px) {
   .hero-images .hero-square-img {
     right: 25%;
+  }
+}
+@media (min-width: 850px) {
+  .hero-images .hero-square-img {
+    right: 5%;
   }
 }/*# sourceMappingURL=main.css.map */
