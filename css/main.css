@@ -5,12 +5,14 @@
   --fs-500: 1rem;
   --fs-600: 1.5rem;
   --fs-700: 2rem;
+  --fs-800: 2rem;
 }
 @media (min-width: 575px) {
   :root {
     --fs-500: clamp(.9rem, 1vw + .5rem, 1.1rem);
     --fs-600: 2rem;
-    --fs-700: clamp(2rem, 4vw + 1rem, 4.25rem);
+    --fs-700: 3rem;
+    --fs-800: clamp(2rem, 4vw + 1rem, 4.25rem);
   }
 }
 @media (min-width: 850px) {
@@ -45,7 +47,8 @@ body {
   font-size: size(400);
   background-color: #F9F9F9;
   color: hsl(0, 0%, 16%);
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
 }
 
 img {
@@ -66,6 +69,7 @@ ul li {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -80,7 +84,7 @@ a {
 }
 /* UTILITY CLASSES */
 .wrapper {
-  margin: 1em 2em;
+  margin: 1em 2em 5em 2em;
   max-width: 95%;
 }
 
@@ -218,6 +222,11 @@ a {
   line-height: 1.25em;
 }
 
+.fs-800 {
+  font-size: var(--fs-800);
+  line-height: 1.25em;
+}
+
 /* Components */
 /* Primary Header */
 .navbar {
@@ -272,9 +281,10 @@ a {
 }
 
 .primary-navigation {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
+  opacity: 0;
   z-index: 2;
   width: 77%;
   height: 100vh;
@@ -326,11 +336,13 @@ a {
     transform: none;
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
+    opacity: 1;
   }
 }
 
 .nav-transform {
   transform: translateX(0);
+  opacity: 1;
 }
 
 .nav-btn {
@@ -395,9 +407,13 @@ a {
 body {
   background-image: url("../images/bg/bg-mobile.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-  background-position-x: 85%;
+  background-size: contain;
+  background-position: top left;
+}
+@media (min-width: 560px) {
+  body {
+    background-image: url("../images/bg/bg-tablet.png");
+  }
 }
 @media (min-width: 850px) {
   body {
@@ -408,24 +424,35 @@ body {
   }
 }
 
+.portfolio {
+  background-image: url("../images/bg/bg-portfolio-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+}
+
 /* Hero Section */
 .hero {
   display: grid;
   grid-template-areas: "title" "buttons" "image";
   row-gap: 1em;
   max-height: 90vh;
+  min-width: 90vw;
+  max-width: 20em;
+  margin-inline: auto;
 }
 @media (min-width: 575px) {
   .hero {
     grid-template-areas: "." "title" "image" "buttons" ".";
     place-content: center;
     row-gap: 1.5em;
-    max-height: 100vh;
+    height: 90vh;
+    max-width: unset;
   }
 }
 @media (min-width: 850px) {
   .hero {
-    min-height: 70vh;
+    height: 80vh;
     grid-template-areas: ". title image ." ". buttons image .";
     grid-template-columns: minmax(4rem, 1fr) minmax(0, 40em) minmax(0, 25em) minmax(4rem, 1fr);
     row-gap: 2em;
@@ -499,17 +526,19 @@ body {
 .hero-images {
   grid-area: image;
   position: relative;
+  height: 30vh;
 }
 @media (min-width: 575px) {
   .hero-images {
     display: grid;
     place-items: center;
+    height: unset;
   }
 }
 .hero-images .hero-name-img,
 .hero-images .hero-square-img {
   position: absolute;
-  width: 80%;
+  width: 15em;
   right: 0;
   top: -4em;
 }
@@ -546,5 +575,80 @@ body {
 @media (min-width: 850px) {
   .hero-images .hero-square-img {
     right: 5%;
+  }
+}
+
+/* Portfolio Section */
+.portfolio .grid {
+  place-items: center;
+  gap: 3em;
+  grid-template-areas: "title" "card1" "card2";
+}
+@media (min-width: 575px) {
+  .portfolio .grid {
+    grid-template-areas: ". ." "title card1" "card2 card1" "card2 .";
+    grid-template-columns: auto auto;
+  }
+  .portfolio .grid .card.one {
+    grid-area: card1;
+  }
+  .portfolio .grid .card.two {
+    grid-area: card2;
+  }
+}
+
+.portfolio-title {
+  margin-top: 3em;
+  grid-area: title;
+}
+
+.cube-img {
+  width: 1em;
+}
+@media (min-width: 575px) {
+  .cube-img {
+    width: 1.5em;
+  }
+}
+
+.card {
+  display: grid;
+  place-content: center;
+  grid-gap: 1em;
+  border: 2px solid hsl(193, 100%, 31%);
+  padding: 2em 1.5em;
+}
+.card .card-img {
+  border: 1.5px solid hsl(183, 55%, 40%);
+}
+.card .card-title,
+.card .card-desc {
+  text-align: center;
+}
+.card .dom-names {
+  display: flex;
+  justify-content: center;
+}
+.card .dom-names p {
+  display: inline-block;
+  padding: 0.5em;
+  margin-inline: 0.5em;
+  border: 1px solid hsl(0, 0%, 16%);
+}
+.card .portfolio-cta {
+  display: flex;
+  justify-content: right;
+  gap: 1em;
+}
+.card .portfolio-cta img {
+  width: 1em;
+}
+.card .portfolio-cta:hover, .card .portfolio-cta:focus {
+  -webkit-text-decoration: underline hsl(193, 100%, 31%);
+          text-decoration: underline hsl(193, 100%, 31%);
+}
+@media (min-width: 575px) {
+  .card {
+    width: auto;
   }
 }/*# sourceMappingURL=main.css.map */
