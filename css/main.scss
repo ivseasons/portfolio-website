@@ -74,6 +74,7 @@ body {
     color: color(gray);
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 img {
@@ -231,9 +232,10 @@ a {
 
 .navbar {
     position: fixed;
-    margin-inline: 1.5rem;
-    top: 2em;
+    padding: 2em 1.5rem 0;
+    width: 100vw;
     z-index: 10;
+    top: 0;
 
     &.flex {
         align-content: center;
@@ -253,10 +255,14 @@ a {
     @media (min-width: 575px) {
         position: unset;
         margin-block: 2em;
+        padding: 0 2em;
+        width: unset;
     }
 
     @media (min-width: 950px) {
         margin: 3em 5.5em;
+        padding: 0;
+        
 
         .logo {
             width: 2rem;
@@ -287,6 +293,11 @@ a {
 .change-bg {
     background-image: url("../images/nav/icon-close.png");
 }
+
+.scroll-btn {
+    top: 0.2rem;
+}
+
 
 .primary-navigation {
     position: fixed;
@@ -366,6 +377,13 @@ a {
 .nav-transform {
     transform: translateX(0);
     opacity: 1;
+}
+
+.scroll-bg {
+    background-color: #F9F9F9;
+    padding: 0.5em 1.5em;
+    z-index: 5;
+    transition: 0.3s;
 }
 
 .nav-btn {
@@ -782,7 +800,7 @@ footer {
         'box info'
         'list image';
     grid-template-columns: 50% 50%;
-    grid-template-rows: 45vh 35vh;
+    grid-template-rows: 50vh 40vh;
     // margin-top: 5em;
 
     @media (min-width: 600px) {
@@ -926,7 +944,7 @@ footer {
     grid-area: image;
     position: relative;
     left: -10vw;
-    top: -3vh;
+    top: -1.5vh;
 
     @media (min-width: 600px) {
         left: 0;

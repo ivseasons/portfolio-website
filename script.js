@@ -4,6 +4,7 @@ const navBtns = document.querySelectorAll(".nav-cta")
 const toggleBtn = document.getElementById("open-btn");
 const nav = document.getElementById("primary-navigation");
 const changeAria = document.getElementById("aria");
+const navbar = document.querySelector('.navbar');
 
 toggleBtn.addEventListener("click", function(){
     toggleMobileNavigation()
@@ -29,6 +30,20 @@ function toggleMobileNavigation() {
     }
 }
 
+window.onscroll = function(){
+    const width = window.matchMedia("(max-width: 575px)");
+
+    if(width.matches) {
+        if(scrollY > 20) {
+        navbar.classList.add('scroll-bg');
+        toggleBtn.classList.add('scroll-btn')
+        } else {
+            navbar.classList.remove('scroll-bg');
+            toggleBtn.classList.remove('scroll-btn')
+        }
+    } 
+}
+
 
 // GSAP Animation
 
@@ -51,12 +66,23 @@ tl.from('.hero-square-img, .navbar, .hero-btns', {opacity: 0, duration: 2}, "+=.
 
 // Portfolio Section
 
+gsap.from('.portfolio-heading, .portfolio-info', {
+    scrollTrigger: {
+        trigger: '.portfolio',
+        start: 'top center'
+    },
+    x: -100,
+    duration: 1,
+    opacity: 0,
+    stagger: 0.5
+})
+
 gsap.from('.card', {
     scrollTrigger: {
         trigger: '.card',
         start: 'top center'
     },
-    y: -50,
+    y: -100,
     duration: 2,
     opacity: 0,
     stagger: 0.75
