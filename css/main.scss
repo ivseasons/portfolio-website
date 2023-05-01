@@ -22,7 +22,7 @@ $font-family: (
 :root {
     /* font sizes */
 
-    --fs-400: 0.75rem;
+    --fs-400: 0.875rem;
     --fs-500: 1rem;
     --fs-600: 1.5rem;
     --fs-700: 2rem;
@@ -277,7 +277,7 @@ a {
     display: block;
     position: fixed;
     z-index: 3;
-    top: 1.75rem;
+    top: 1.25rem;
     right: 1.5rem;
     background: transparent;
     background-image: url("../images/nav/icon-hamburger.png");
@@ -422,7 +422,7 @@ a {
 
 .lang {
     position: absolute;
-    bottom: 10vh;
+    bottom: 20vh;
     right: 40%;
     
     [aria-selected="false"] {
@@ -627,7 +627,7 @@ footer {
     .hero-name-img,
     .hero-square-img {
         position: absolute;
-        width: 15em;
+        width: 20em;
         right: 0;
         top: -4em;
 
