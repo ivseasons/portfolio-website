@@ -95,7 +95,7 @@ gsap.from('.profile-title, .profile-info1, .profile-info2, .contact-cta, .profil
         trigger: '.profile',
         start: 'top center'
     },
-    x: 200,
+    x: -200,
     duration: 1.5,
     opacity: 0,
     stagger: 0.2
