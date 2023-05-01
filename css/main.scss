@@ -56,6 +56,9 @@ html {
 
 body {
     margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 h1,
@@ -69,7 +72,7 @@ p {
 
 body {
     font-family: family(sans);
-    font-size: size(400);
+    font-size: var(--fs-400);
     background-color: #F9F9F9;
     color: color(gray);
     height: 100vh;
@@ -497,17 +500,11 @@ footer {
 }
 
 .section-divider {
-    background-color: #f9f9f9;
     height: 5em;
 
     @media (min-width: 600px) {
-        height: 10em;
+        height: 7em;
     }
-    
-    // @media (min-width: 1000px) {
-    //     background-color: hsl(183 55% 40% / .1);
-    // }
-
 }
 
 
