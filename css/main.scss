@@ -46,6 +46,7 @@ $font-family: (
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 *,
@@ -627,7 +628,7 @@ footer {
     .hero-name-img,
     .hero-square-img {
         position: absolute;
-        width: 20em;
+        width: 18em;
         right: 0;
         top: -4em;
 
@@ -798,7 +799,7 @@ footer {
         'box info'
         'list image';
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50vh 40vh;
+    grid-template-rows: 60vh 40vh;
 
     @media (min-width: 600px) {
         grid-template-areas: 
