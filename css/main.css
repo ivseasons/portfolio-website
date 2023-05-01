@@ -421,7 +421,7 @@ a {
 
 .lang {
   position: absolute;
-  bottom: 3em;
+  bottom: 10vh;
   right: 40%;
 }
 .lang [aria-selected=false] {
@@ -898,13 +898,15 @@ footer {
   .profile-list {
     top: 0;
     align-self: start;
-    justify-self: center;
-    padding-block: 2em;
+    justify-self: start;
+    padding: 2em 4em;
   }
 }
 @media (min-width: 1000px) {
   .profile-list {
     width: 50vw;
+    padding: 2em 0;
+    justify-self: center;
   }
 }
 

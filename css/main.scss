@@ -422,7 +422,7 @@ a {
 
 .lang {
     position: absolute;
-    bottom: 3em;
+    bottom: 10vh;
     right: 40%;
     
     [aria-selected="false"] {
@@ -799,7 +799,6 @@ footer {
         'list image';
     grid-template-columns: 50% 50%;
     grid-template-rows: 50vh 40vh;
-    // margin-top: 5em;
 
     @media (min-width: 600px) {
         grid-template-areas: 
@@ -928,12 +927,14 @@ footer {
     @media (min-width: 600px) {
         top: 0;
         align-self: start;
-        justify-self: center;
-        padding-block: 2em;
+        justify-self: start;
+        padding: 2em 4em;
     }
 
     @media (min-width: 1000px) {
         width: 50vw;
+        padding: 2em 0;
+        justify-self: center;
     }
     
 }
