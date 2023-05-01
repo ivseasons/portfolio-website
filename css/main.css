@@ -685,6 +685,7 @@ footer {
     -moz-column-gap: 2em;
          column-gap: 2em;
     padding-block: 6em;
+    align-items: start;
   }
 }
 
@@ -720,10 +721,9 @@ footer {
 
 .card {
   display: grid;
-  place-content: center;
-  grid-gap: 1em;
-  border: 2px solid hsl(193, 100%, 31%);
-  padding: 2em 1.5em;
+  grid-gap: 0.5em;
+  justify-items: start;
+  align-items: start;
 }
 @media (min-width: 575px) {
   .card {
@@ -736,19 +736,19 @@ footer {
 }
 .card .card-title {
   font-weight: bold;
-}
-.card .card-title,
-.card .card-desc {
   text-align: center;
+}
+.card .card-desc {
+  text-align: left;
 }
 .card .dom-names {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 1em;
 }
 .card .dom-names p {
   display: inline-block;
   padding: 0.5em;
-  margin-inline: 0.5em;
   border: 1px solid hsl(0, 0%, 16%);
 }
 .card .portfolio-cta {

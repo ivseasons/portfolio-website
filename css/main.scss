@@ -702,6 +702,7 @@ footer {
         grid-template-columns: minmax(4rem, 1fr) minmax(0, 40em) minmax(0, 40em) minmax(4rem, 1fr);
         column-gap: 2em;  
         padding-block: 6em;
+        align-items: start;
     }
 }
 
@@ -737,10 +738,10 @@ footer {
 
 .card {
     display: grid;
-    place-content: center;
-    grid-gap: 1em;
-    border: 2px solid color(primary);
-    padding: 2em 1.5em;
+    grid-gap: .5em;
+    justify-items: start;
+    align-items: start;
+
 
     @media (min-width: 575px) {
         max-width: 70vw;
@@ -753,21 +754,21 @@ footer {
 
     .card-title {
         font-weight: bold;
+        text-align: center;
     }
 
-    .card-title,
     .card-desc {
-        text-align: center;
+        text-align: left;
     }
 
     .dom-names {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 1em;
     
         p {
         display: inline-block;
         padding: .5em;
-        margin-inline: .5em;
         border: 1px solid color(gray);
         }
     }
