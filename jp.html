@@ -56,8 +56,8 @@
                 <span class="ff-serif text-primary fs-800 letter-spacing-1 uppercase block">Developer</span>
             </div>
             <div class="hero-btns">
-                <a class="primary-btn filled-btn letter-spacing-2" href="#portfolio-section">プロジェクトを見る</a>
-                <a class="primary-btn white-btn" href="#contact-section">お問い合わせ</a>
+                <a class="primary-btn filled-btn" href="#portfolio-section">プロジェクトを見る</a>
+                <a class="primary-btn white-btn fit-content" href="#contact-section">お問い合わせ</a>
             </div>
             <div class="hero-images">
                 <img class="hero-name-img" src="./images/name-square.png" alt="Seika Fukumoto Label">
@@ -80,14 +80,35 @@
                         レスポンシブなWebデザインで良いユーザーの体験（UX）や使いやすいユーザーインターフェイス（UI）を心がけています。
                     </p>
                 </div>
-    
+
                 <div class="card one flow">
+                    <a href="https://katealexandramusic.com/" target="_blank">
+                        <img class="card-img" src="./images/portfolio/card-portfolio-image.jpg" alt="Business Website Portfolio Image">
+                    </a>
+                    <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">ポートフォリオのサイト</h2>
+                    <p class="card-desc ff-sans fs-400 letter-spacing-2">
+                        サイトのデザインとコーディング。アニーメーションはGreensock Animation Platformを使用してます。メディアのページではjQueryを使用してます。
+                    </p>
+                    <div class="dom-names">
+                        <p class="ff-sans fs-400 letter-spacing-1">html</p>
+                        <p class="ff-sans fs-400 letter-spacing-1">css</p>
+                        <p class="ff-sans fs-400 letter-spacing-1">javascript</p>
+                        <p class="ff-sans fs-400 letter-spacing-1">jQuery</p>
+                        <p class="ff-sans fs-400 letter-spacing-1">sass</p>
+                    </div>
+                    <a class="portfolio-cta ff-sans fs-400 letter-spacing-1" target="_blank" href="https://katealexandramusic.com/">
+                        <span class="text-gray">view <strong class="text-primary">site</strong></span>
+                        <img src="./images/portfolio/arrow.png">
+                    </a>
+                </div>
+
+                <div class="card two flow">
                     <a href="https://ivseasons.github.io/coffee-shop-website/" target="_blank">
                         <img class="card-img" src="./images/portfolio/card-coffee-image.png" alt="Coffee Shop Website Portfolio Image">
                     </a>
                     <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">飲食店のサイト</h2>
                     <p class="card-desc ff-sans fs-400 letter-spacing-2">
-                        コーヒーショップのロゴ + サイトのデザインとコーディング。サイトのアニーメーションはGreensock Animation Platformを使ってます。
+                        コーヒーショップのロゴ + サイトのデザインとコーディング。サイトのアニーメーションはGreensock Animation Platformを使用してます。
                     </p>
                     <div class="dom-names">
                         <p class="ff-sans fs-400 letter-spacing-1">html</p>
@@ -105,7 +126,7 @@
                     </a>
                 </div>
     
-                <div class="card two flow">
+                <div class="card three flow">
                     <a href="https://ivseasons.github.io/space-tourism-website/" target="_blank">
                         <img class="card-img" src="./images/portfolio/card-space-image.png" alt="Space Website Portfolio Image">
                     </a>
@@ -156,7 +177,7 @@
                         <li class="ff-sans fs-400 letter-spacing-2">sass</li>
                         <li class="ff-sans fs-400 letter-spacing-2">javascript</li>
                         <li class="ff-sans fs-400 letter-spacing-2">node.js</li>
-                        <!-- <li class="ff-sans fs-400 letter-spacing-2">react</li> -->
+                        <li class="ff-sans fs-400 letter-spacing-2">jQuery</li>
                         <li class="ff-sans fs-400 letter-spacing-2"><img class="icon" src="./images/portfolio/icon-figma.svg"></li>
                     </ul>
                 </div>
@@ -170,7 +191,7 @@
     <footer id="contact-section" class="wrapper-block">
         <div class="grid wrapper-block">
             <h1 class="ff-serif fs-700 letter-spacing-1">get in touch</h1>
-            <form class="form">
+            <form class="form" method="POST" data-netlify="true">
                 <label name="name">お名前</label>
                 <input type="text" name="name">
                 
