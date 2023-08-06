@@ -1,3 +1,19 @@
+// Language Preference
+
+const lang = navigator.language.slice(0, 2);
+const englishBtn = document.getElementById("eng-btn");
+const japaneseBtn = document.getElementById("ja-btn");
+
+if(lang === 'ja') {
+    document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
+    englishBtn.setAttribute("aria-selected", false);
+    japaneseBtn.setAttribute("aria-selected", true);
+} else {
+    document.querySelectorAll('.japanese').forEach(elem => elem.style.display = 'none');
+    englishBtn.setAttribute("aria-selected", true);
+    japaneseBtn.setAttribute("aria-selected", false);
+}
+
 // Mobile Navigation Toggle
 
 const navBtns = document.querySelectorAll(".nav-cta")

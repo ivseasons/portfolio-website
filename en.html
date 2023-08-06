@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,10 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/cube-filled.png">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
 <body>
+    <a class="skip-cta" href="#main">Skip to Content</a>
+
     <header>
 
         <div class="navbar flex">
@@ -26,38 +27,40 @@
             <nav class="primary-navigation" id="primary-navigation">
                 <ul>
                     <li>
-                        <a class="nav-cta ff-sans letter-spacing-2 uppercase fs-500" href="#portfolio-section">portfolio</a>
+                        <a class="nav-cta ff-sans letter-spacing-2 uppercase fs-500" href="#portfolio-section">projects</a>
                     </li>
+
                     <li>
-                        <a class="nav-cta ff-sans letter-spacing-2 uppercase fs-500" href="#profile-section">profile</a>
+                        <a class="nav-cta ff-sans letter-spacing-2 uppercase fs-500" href="#profile-section">about me</a>
                     </li>
+
                     <li>
                         <a class="nav-cta nav-btn ff-sans uppercase fs-500" href="#contact-section">get in touch</a>
                     </li>
                 </ul>
                 <div class="lang">
-                    <a class="lang-btn text-gray fs-400 ff-sans" aria-selected="false" href="index.html">EN </a> 
+                    <a class="lang-btn text-gray fs-400 ff-sans" aria-selected="false" href="en.html" id="eng-btn">EN </a> 
                     <span> | </span>
-                    <a class="lang-btn text-gray fs-400 ff-sans" aria-selected="true" href="japanese.html"> JP</a>
+                    <a class="lang-btn text-gray fs-400 ff-sans" aria-selected="true" href="jp.html" id="ja-btn"> JP</a>
                 </div>
             </nav>
         </div>
     </header>
-    <main>
+    <main id="main">
         <div class="bg-box"></div>
         <section id="hero-section" class="hero wrapper-inline grid">
             
             <div class="hero-title">
-                <span class="ff-serif text-gray fs-800 letter-spacing-1 block">UI/UX</span>
-                <span class="ff-serif text-primary fs-800 letter-spacing-1 uppercase block-mobile">Designer</span>
-                <span class="ff-serif text-gray fs-800 letter-spacing-1 block-mobile">and</span>
-                <span class="ff-serif text-gray fs-800 letter-spacing-1 block">Full-Stack</span>
+                <span class="ff-serif text-gray fs-800 letter-spacing-1 uppercase block">Web</span>
+                <span class="ff-serif text-primary fs-800 letter-spacing-1 uppercase block">Designer</span>
+                <span class="ff-serif text-gray fs-800 letter-spacing-1 block">and</span>
                 <span class="ff-serif text-primary fs-800 letter-spacing-1 uppercase block">Developer</span>
             </div>
             <div class="hero-btns">
-                <a class="primary-btn filled-btn letter-spacing-1 uppercase" href="#portfolio-section">portfolio</a>
-                <a class="primary-btn white-btn" href="#contact-section">お問い合わせ</a>
+                <a class="primary-btn filled-btn" href="#portfolio-section">see projects</a>
+                <a class="primary-btn white-btn" href="#contact-section">get in touch</a>
             </div>
+
             <div class="hero-images">
                 <img class="hero-name-img" src="./images/name-square.png" alt="Seika Fukumoto Label">
                 <img class="hero-square-img" src="./images/hero-square.png">    
@@ -67,24 +70,26 @@
         
         <div class="section-divider"></div>
 
-        <section class="portfolio" id="portfolio-section">
+        <section  id="portfolio-section" class="portfolio">
             <div class="wrapper-inline grid">
                 <div class="portfolio-title">
-                    <div>
+                    <div class="portfolio-heading">
                         <img class="inline-block cube-img" src="./images/cube-filled.png" alt="logo cube image">
-                        <h1 class="inline-block text-gray fs-700 ff-serif letter-spacing-1">portfolio</h1>
+                        <h1 class="inline-block text-gray fs-700 ff-serif letter-spacing-1">projects</h1>
                     </div>
             
                     <p class="portfolio-info ff-sans fs-500 letter-spacing-1">
-                        レスポンシブなWebデザインで良いユーザーの体験（UX）や使いやすいユーザーインターフェイス（UI）を心がけています。
+                        I specialize in responsive web designs that focus on smooth UI (user interface) and UX (user experience) with accesibility features.
                     </p>
                 </div>
     
                 <div class="card one flow">
-                    <img class="card-img" src="./images/portfolio/card-coffee-image.png" alt="Coffee Shop Website Portfolio Image">
-                    <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">飲食店のサイト</h2>
+                    <a href="https://ivseasons.github.io/coffee-shop-website/" target="_blank">
+                        <img class="card-img" src="./images/portfolio/card-coffee-image.png" alt="Coffee Shop Website Portfolio Image">
+                    </a>
+                    <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">Business Page</h2>
                     <p class="card-desc ff-sans fs-400 letter-spacing-2">
-                        コーヒーショップのロゴ + サイトのデザインとコーディング。サイトのアニーメーションはGreensock Animation Platformを使ってます。
+                        Logo + website design and coding for a coffee shop. Greensock Animation Platform is used for the website animation.
                     </p>
                     <div class="dom-names">
                         <p class="ff-sans fs-400 letter-spacing-1">html</p>
@@ -93,20 +98,22 @@
                         <p class="ff-sans fs-400 letter-spacing-1">javascript</p>
                     </div>
                     <a class="portfolio-cta ff-sans fs-400 letter-spacing-1" target="_blank" href="https://ivseasons.github.io/coffee-shop-website/">
-                        <span class="text-gray">サイトを<strong class="text-primary">見る</strong></span>
+                        <span class="text-gray">view <strong class="text-primary">site</strong></span>
                         <img src="./images/portfolio/arrow.png">
                     </a>
                     <a class="portfolio-cta ff-sans fs-400 letter-spacing-1" target="_blank" href="https://github.com/ivseasons/coffee-shop-website.git">
-                        <span class="text-gray">コードを<strong class="text-primary">見る</strong></span>
+                        <span class="text-gray">view <strong class="text-primary">code</strong></span>
                         <img src="./images/portfolio/arrow.png">
                     </a>
                 </div>
     
                 <div class="card two flow">
-                    <img class="card-img" src="./images/portfolio/card-space-image.png" alt="Space Website Portfolio Image">
-                    <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">情報提供のサイト</h2>
+                    <a href="https://ivseasons.github.io/space-tourism-website/" target="_blank">
+                        <img class="card-img" src="./images/portfolio/card-space-image.png" alt="Space Website Portfolio Image">
+                    </a>
+                    <h2 class="card-title fs-500 ff-sans letter-spacing-2 uppercase text-primary">Informational Page</h2>
                     <p class="card-desc ff-sans fs-400 letter-spacing-2">
-                        コーデイング。デザインはFrontend Mentorより。
+                        Coding. Design provied by Frontend Mentor
                     </p>
                     <div class="dom-names">
                         <p class="ff-sans fs-400 letter-spacing-1">html</p>
@@ -115,35 +122,36 @@
                         <p class="ff-sans fs-400 letter-spacing-1">sass</p>
                     </div>
                     <a class="portfolio-cta ff-sans fs-400 letter-spacing-1" target="_blank" href="https://ivseasons.github.io/space-tourism-website/">
-                        <span class="text-gray">サイトを<strong class="text-primary">見る</strong></span>
+                        <span class="text-gray">view <strong class="text-primary">site</strong></span>
                         <img src="./images/portfolio/arrow.png">
                     </a>
                     <a class="portfolio-cta ff-sans fs-400 letter-spacing-1" target="_blank" href="https://github.com/ivseasons/space-tourism-website.git">
-                        <span class="text-gray">コードを<strong class="text-primary">見る</strong></span>
+                        <span class="text-gray">view <strong class="text-primary">code</strong></span>
                         <img src="./images/portfolio/arrow.png">
                     </a>
                 </div>
-
+                
             </div>
-            <div class="section-divider"></div>
+            <div  class="section-divider"></div>
+            
         </section>
 
-        <section class="profile">
-            <div id="profile-section" class="grid">
+        <section id="profile-section" class="profile">
+            <div class="grid">
                 <div class="box"></div>
                 <div class="profile-info flow">
                     <h1 class="profile-title ff-sans fs-500 uppercase letter-spacing-2">Hi, I'm <span class="ff-serif fs-700 lowercase letter-spacing-1">seika</span></h1>
                     <p class="profile-info1 ff-sans fs-400 letter-spacing-1">
-                        2022年より神戸で活動しているwebデザイナー。2020年までアメリカに住んでいて、サイトは日本語と英語が可能。
+                        I’m a web designer based in Kobe, Japan since 2022. I lived in the US until 2020 and am available to make websites in English and Japanese.
                     </p>
                     <p class="profile-info2 ff-sans fs-400 letter-spacing-1">
-                        あなたの次のデザインを一緒に作りましょう！
+                        Please contact me to chat about your next design!
                     </p>
                     <div class="contact-cta">
-                        <a class="primary-btn white-btn" href="#contact-section">お問い合わせ</a>
+                        <a class="primary-btn white-btn" href="#contact-section">get in touch</a>
                     </div>
-                    
                 </div>
+
                 <div class="profile-list">
                     <ul>
                         <li class="ff-sans fs-400 letter-spacing-2">html</li>
@@ -165,7 +173,19 @@
     <footer id="contact-section" class="wrapper-block">
         <div class="grid wrapper-block">
             <h1 class="ff-serif fs-700 letter-spacing-1">get in touch</h1>
-            <a class="primary-btn white-btn" href="mailto:seika.fukumoto@gmail.com">contact me</a>
+            <form class="form">
+                <label name="name">name</label>
+                <input type="text" name="name">
+                
+                <label name="email">email address</label>
+                <input type="email" name="email">
+                
+                <label name="message">message</label>
+                <textarea></textarea>
+
+                <button type="submit" class="primary-btn white-btn">contact me</button>
+            </form>
+            <!-- <a class="primary-btn white-btn" href="mailto:seika.fukumoto@gmail.com">contact me</a> -->
         </div>
     </footer>
     
@@ -173,5 +193,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js" integrity="sha512-zaTjCyJwbhpd8V594wpmUStv6Dy/SnmP7jR+XXnE49z2ayHkSirlNiP4XQc15Zgk+p5gXGe5ZUQYu4yRtShqkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+
 </body>
 </html>

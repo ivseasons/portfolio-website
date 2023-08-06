@@ -111,6 +111,25 @@ a {
     }
 }
 
+.skip-cta {
+    position: absolute;
+    z-index: 15;
+    top: 0;
+    background-color: color(primary);
+    color: white;
+    font-family: family(sans);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform .3s ease-in;
+
+    &:focus {
+        transform: translateY(0);
+    }
+}
+
 /* UTILITY CLASSES */
 
 .wrapper-inline {
@@ -670,6 +689,11 @@ footer {
         'card2';
     padding-block: 3em;
     
+    .card a img:hover,
+    .card a img:focus {
+        transform: scale(1.05);
+        transition: .3s;
+    }
     .card.one {
         grid-area: card1;
     }
@@ -740,7 +764,7 @@ footer {
     }
 
     .card-img {
-        border: 1.5px solid color(light);
+        border: 1px solid color(light);
         width: auto;
     }
 
@@ -959,6 +983,31 @@ footer {
 footer .grid {
     place-items: center;
 
+    h1 {
+        margin-bottom: 2.5rem;
+    }
+
+    .form {
+        display: grid;
+        place-items: start;
+
+        input {
+            width: 200px;
+            margin-bottom: .5rem;
+            padding-block: .25em;
+        }
+
+        textarea {
+            width: 250px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            place-self: center;
+        }
+    }
+
     @media (min-width: 1000px) {
         h1 {
             position: relative;
@@ -972,6 +1021,23 @@ footer .grid {
                 background-color: hsl(0 0% 16% / .15);
                 top: -40%;
                 left: 10%;
+            }
+        }
+
+        display: flex;
+        justify-content: space-evenly;
+
+        .form {
+            input {
+                width: 250px;
+            }
+            
+            textarea {
+                width: 300px;
+            }
+
+            button {
+                place-self: start;
             }
         }
     }
